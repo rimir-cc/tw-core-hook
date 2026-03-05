@@ -1,0 +1,33 @@
+created: 20260305110506503
+modified: 20260305110506503
+rdt.hub-category: infrastructure
+rdt.hub-category-name: Infrastructure
+rdt.hub-order: 1
+rdt.order: 1
+rdt.plugin-key: core-hook
+rdt.plugin-name: core hook
+rdt.plugin-subtitle: Unified settings hub for rimir plugins
+rdt.section: Overview
+title: $:/plugins/rimir/core-hook/doc/overview
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! What it does
+
+Adds a ''Rimi Plugins'' top-level tab to the ControlPanel. The tab shows a vertical sidebar listing all installed rimir plugins, with a content area that displays each plugin's settings panel or a default info card.
+
+!! Features
+
+* ''Dynamic discovery'' — automatically lists all plugins with title prefix `$:/plugins/rimir/`
+* ''Vertical sidebar'' — click any plugin to view its settings; active plugin highlighted with accent border
+* ''Auto-selection'' — first plugin selected on load (no blank content)
+* ''Fallback panel'' — plugins without settings show an info card with a link to documentation
+* ''Dual-purpose settings'' — the same `settings` tiddler appears both in the hub and in TW's built-in plugin detail view
+
+!! How plugins opt in
+
+Create a tiddler titled `$:/plugins/rimir/<slug>/settings` inside your plugin. The hub transcludes it as the content panel. Add `"settings"` to the `list` field in `plugin.info` so TW's plugin info view also shows a settings tab.
+
+</$fill>

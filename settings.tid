@@ -1,0 +1,8 @@
+created: 20260305110506504
+modified: 20260305110506504
+title: $:/plugins/rimir/core-hook/settings
+type: text/vnd.tiddlywiki
+
+<div class="rr-settings-info-card">
+No configurable settings. This plugin provides the settings hub framework.
+</div>

@@ -1,0 +1,23 @@
+created: 20260305110506504
+modified: 20260305110506504
+title: $:/plugins/rimir/core-hook/readme
+type: text/vnd.tiddlywiki
+
+! core hook
+
+Unified settings hub for all rimir plugins. Adds a "Rimi Plugins" tab to ControlPanel > Settings with a vertical sidebar listing all installed rimir plugins and their settings.
+
+!! Key features
+
+* ''Dynamic discovery'' — automatically finds all installed `$:/plugins/rimir/*` plugins
+* ''Vertical sidebar'' — plugin list with icons, names, and version badges
+* ''Auto-discovery of settings'' — transcludes each plugin's `settings` tiddler as content panel
+* ''Fallback panel'' — plugins without settings show an info card with link to documentation
+
+!! Prerequisites
+
+No external prerequisites.
+
+!! Quick start
+
+Install plugin. All rimir plugins with a `settings` tiddler automatically appear in ControlPanel > Settings > Rimi Plugins.

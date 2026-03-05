@@ -1,0 +1,49 @@
+caption: Rimi Plugins
+created: 20260305110506503
+modified: 20260305110506503
+tags: $:/tags/ControlPanel/SettingsTab
+title: $:/plugins/rimir/core-hook/controlpanel
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+<div class="rr-settings-hub">
+<div class="rr-settings-sidebar">
+<$list filter="[plugin-type[plugin]prefix[$:/plugins/rimir/]!title[$:/plugins/rimir/core-hook]sort[name]]">
+<$let isActive={{{ [[$:/state/rimir/core-hook/selected]get[text]match<currentTiddler>then[rr-settings-plugin-active]else[]] }}}
+      classes={{{ [[rr-settings-plugin-item ]addsuffix<isActive>] }}} >
+<$button class=<<classes>> set="$:/state/rimir/core-hook/selected" setTo=<<currentTiddler>>>
+<$transclude $tiddler={{{ [<currentTiddler>addsuffix[/icon]] }}} size="16pt"/>
+<span class="rr-settings-plugin-name">
+<$text text={{{ [<currentTiddler>get[name]] ~[<currentTiddler>split[/]last[1]] }}}/>
+</span>
+<span class="rr-settings-plugin-version rr-muted">
+v<$text text={{{ [<currentTiddler>get[version]] }}}/>
+</span>
+</$button>
+</$let>
+</$list>
+</div>
+<div class="rr-settings-content">
+<$let selected={{{ [[$:/state/rimir/core-hook/selected]get[text]] ~[plugin-type[plugin]prefix[$:/plugins/rimir/]!title[$:/plugins/rimir/core-hook]sort[name]first[]] }}}
+     settingsTitle={{{ [<selected>addsuffix[/settings]] }}} >
+<div class="rr-settings-header">
+<$transclude $tiddler={{{ [<selected>addsuffix[/icon]] }}} size="28pt"/>
+<div class="rr-settings-header-text">
+<div class="rr-settings-header-name">
+<$text text={{{ [<selected>get[name]] ~[<selected>split[/]last[1]] }}}/>
+</div>
+<div class="rr-settings-header-desc rr-muted">
+<$text text={{{ [<selected>get[description]] }}}/>
+</div>
+</div>
+</div>
+<$list filter="[all[shadows+tiddlers]title<settingsTitle>]" variable="panel">
+<$transclude $tiddler=<<panel>>/>
+</$list>
+<$list filter="[all[shadows+tiddlers]title<settingsTitle>] +[count[]match[0]]" variable="ignore">
+<$transclude $tiddler="$:/plugins/rimir/core-hook/default-panel"/>
+</$list>
+</$let>
+</div>
+</div>

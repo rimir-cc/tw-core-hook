@@ -1,0 +1,18 @@
+created: 20260305110506504
+modified: 20260305110506504
+tags: $:/tags/Image
+title: $:/plugins/rimir/core-hook/icon
+type: text/vnd.tiddlywiki
+
+\parameters (size:"22pt")
+<svg width=<<size>> height=<<size>> viewBox="0 0 24 24" fill="none" stroke="maroon" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="3"/>
+  <path d="M12 1v4"/>
+  <path d="M12 19v4"/>
+  <path d="M1 12h4"/>
+  <path d="M19 12h4"/>
+  <path d="M4.22 4.22l2.83 2.83"/>
+  <path d="M16.95 16.95l2.83 2.83"/>
+  <path d="M4.22 19.78l2.83-2.83"/>
+  <path d="M16.95 7.05l2.83-2.83"/>
+</svg>

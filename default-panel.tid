@@ -1,0 +1,18 @@
+created: 20260305110506503
+modified: 20260305110506503
+title: $:/plugins/rimir/core-hook/default-panel
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+<div class="rr-settings-info-card">
+This plugin has no configurable settings.
+
+<$let docTitle={{{ [<selected>addsuffix[/doc-overview]] }}} >
+<$list filter="[all[shadows+tiddlers]title<docTitle>]" variable="doc">
+
+<$link to=<<doc>>>Open documentation &rarr;</$link>
+
+</$list>
+</$let>
+</div>

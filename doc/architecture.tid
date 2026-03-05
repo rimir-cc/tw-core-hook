@@ -1,0 +1,42 @@
+created: 20260305110506503
+modified: 20260305110506503
+rdt.order: 2
+rdt.plugin-key: core-hook
+rdt.plugin-name: core hook
+rdt.plugin-subtitle: Unified settings hub for rimir plugins
+rdt.section: Architecture
+title: $:/plugins/rimir/core-hook/doc/architecture
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Plugin discovery
+
+The hub uses a single TW filter to find all rimir plugins:
+
+```
+[plugin-type[plugin]prefix[$:/plugins/rimir/]!title[$:/plugins/rimir/core-hook]sort[name]]
+```
+
+This excludes `core-hook` itself from the sidebar list.
+
+!! State management
+
+Selected plugin is stored in `$:/state/rimir/core-hook/selected`. If no selection exists, the filter auto-selects the first plugin alphabetically. The active sidebar item gets a `rr-settings-plugin-active` class via a `$let` + filter comparison.
+
+!! Settings resolution
+
+For the selected plugin `$:/plugins/rimir/<slug>`, the hub appends `/settings` and checks if that tiddler exists (across shadows + real tiddlers). If found, it transcludes the settings panel. If not, it falls back to `default-panel.tid`.
+
+!! Naming convention
+
+| !Pattern | !Purpose |
+| `$:/plugins/rimir/<slug>/settings` | Settings panel (hub content + plugin detail tab) |
+| `$:/plugins/rimir/<slug>/icon` | Plugin icon (sidebar + header) |
+
+!! CSS classes
+
+All styles use the `rr-settings-` prefix, defined in the theme plugin's `styles.tid`. The hub layout is a flex container with a fixed-width sidebar and flexible content area.
+
+</$fill>
