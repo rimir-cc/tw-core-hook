@@ -17,6 +17,14 @@ No external prerequisites.
 
 Install plugin. All rimir plugins with a `settings` tiddler automatically appear in ControlPanel > Settings > Rimi Plugins.
 
+## Plugin Library
+
+Install from the [rimir plugin library](https://rimir-cc.github.io/tw-plugin-library/) via *Control Panel → Plugins → Get more plugins*.
+
+## Demo
+
+Try this plugin in the [live demo wiki](https://rimir-cc.github.io/tw-demo/).
+
 ## License
 
 MIT -- see [LICENSE.md](LICENSE.md)
