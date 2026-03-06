@@ -3,10 +3,10 @@
     "name": "Core Hook",
     "description": "Unified settings hub for rimir plugins in the ControlPanel",
     "author": "rimir",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "core-version": ">=5.3.0",
     "source": "https://github.com/rimir-cc/tw-core-hook",
     "plugin-type": "plugin",
-    "list": "readme settings",
+    "list": "readme documentation settings changelog license",
     "dependents": "$:/plugins/rimir/theme"
 }
