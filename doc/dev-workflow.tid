@@ -1,0 +1,48 @@
+created: 20260315120000000
+modified: 20260315120000000
+rdt.order: 3
+rdt.plugin-key: core-hook
+rdt.plugin-name: core hook
+rdt.plugin-subtitle: Unified settings hub for rimir plugins
+rdt.section: Dev Workflow
+title: $:/plugins/rimir/core-hook/doc/dev-workflow
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Plugin files
+
+|!File |!Role |
+|`controlpanel.tid` |Main hub UI — tagged `$:/tags/ControlPanel/SettingsTab`, renders sidebar + content layout |
+|`default-panel.tid` |Fallback panel shown when a plugin has no `settings` tiddler |
+|`settings.tid` |core-hook's own settings entry (displays "no configurable settings" info card) |
+|`readme.tid` |Plugin readme |
+|`icon.tid` |SVG icon |
+|`plugin.info` |Plugin metadata |
+
+!! Restart rules
+
+|!Change |!Restart needed? |
+|Any `.tid` file |Yes — all files are plugin shadow tiddlers, require server restart to update |
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/callout" type="info">
+<$fill $name="body">
+core-hook is 100% wikitext — no JS modules. However, since all files are shadow tiddlers inside the plugin, a server restart is needed to pick up changes. Config changes via the browser UI take effect immediately.
+</$fill>
+</$transclude>
+
+!! Adding a plugin to the hub
+
+To make your plugin appear in the settings hub:
+
+# Create a tiddler `$:/plugins/rimir/<slug>/settings` inside your plugin directory
+# Add `"settings"` to the `list` field in `plugin.info`
+# Restart the server — the hub discovers the plugin automatically via the `$:/plugins/rimir/` prefix filter
+
+!! Dependencies
+
+* ''theme'' — CSS classes for the hub layout (`rr-settings-hub`, `rr-settings-sidebar`, `rr-settings-content`, etc.)
+
+</$fill>
+</$transclude>

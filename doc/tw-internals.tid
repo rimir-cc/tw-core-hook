@@ -1,0 +1,35 @@
+created: 20260315120000000
+modified: 20260315120000000
+rdt.order: 7
+rdt.plugin-key: core-hook
+rdt.plugin-name: core hook
+rdt.plugin-subtitle: Unified settings hub for rimir plugins
+rdt.section: TW Internals
+title: $:/plugins/rimir/core-hook/doc/tw-internals
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! $:/tags/ControlPanel/SettingsTab
+
+The `controlpanel.tid` tiddler is tagged `$:/tags/ControlPanel/SettingsTab`, which makes it appear as a top-level tab in ControlPanel > Settings. TiddlyWiki's core ControlPanel uses `$list` with this tag to render settings tabs.
+
+!! plugin-type[plugin] filter
+
+The `plugin-type` field is set automatically by TiddlyWiki on all installed plugins. The hub uses this to discover rimir plugins without maintaining a manual list.
+
+!! Shadow tiddler resolution
+
+The hub checks for settings tiddlers using `[all[shadows+tiddlers]title<settingsTitle>]`. This searches both shadow tiddlers (bundled inside plugins) and real tiddlers (in the wiki store), ensuring the settings panel is found regardless of how the plugin delivers it.
+
+!! $let widget
+
+Used for computed CSS class assignment — the `isActive` variable compares the current iteration item against the stored selection state, and the `classes` variable concatenates the base class with the active modifier.
+
+!! State tiddler pattern
+
+`$:/state/rimir/core-hook/selected` follows TiddlyWiki's convention of using `$:/state/` prefix for UI state that is ephemeral and not synced to the server.
+
+</$fill>
+</$transclude>

@@ -1,0 +1,51 @@
+created: 20260315120000000
+modified: 20260315120000000
+rdt.order: 6
+rdt.plugin-key: core-hook
+rdt.plugin-name: core hook
+rdt.plugin-subtitle: Unified settings hub for rimir plugins
+rdt.section: Reference
+title: $:/plugins/rimir/core-hook/doc/reference
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Discovery filter
+
+```
+[plugin-type[plugin]prefix[$:/plugins/rimir/]!title[$:/plugins/rimir/core-hook]sort[name]]
+```
+
+Finds all installed rimir plugins except core-hook itself.
+
+!! State tiddler
+
+|!Tiddler |!Purpose |
+|`$:/state/rimir/core-hook/selected` |Currently selected plugin title in the sidebar |
+
+!! Convention: settings tiddler
+
+|!Pattern |!Purpose |
+|`$:/plugins/rimir/<slug>/settings` |Settings panel content — transclused by the hub and shown in plugin detail view |
+
+!! Convention: icon tiddler
+
+|!Pattern |!Purpose |
+|`$:/plugins/rimir/<slug>/icon` |SVG icon displayed in the sidebar and header (16pt sidebar, 28pt header) |
+
+!! CSS classes (from theme plugin)
+
+|!Class |!Purpose |
+|`rr-settings-hub` |Top-level flex container (sidebar + content) |
+|`rr-settings-sidebar` |Left sidebar with plugin list |
+|`rr-settings-plugin-item` |Clickable button for each plugin |
+|`rr-settings-plugin-active` |Highlighted state (accent left border) |
+|`rr-settings-plugin-name` |Plugin name text (truncated) |
+|`rr-settings-plugin-version` |Version badge (muted) |
+|`rr-settings-content` |Right content area |
+|`rr-settings-header` |Plugin header with icon + name + description |
+|`rr-settings-info-card` |Dashed fallback card for plugins without settings |
+
+</$fill>
+</$transclude>

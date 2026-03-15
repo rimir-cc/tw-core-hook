@@ -1,0 +1,33 @@
+created: 20260315120000000
+modified: 20260315120000000
+rdt.order: 5
+rdt.plugin-key: core-hook
+rdt.plugin-name: core hook
+rdt.plugin-subtitle: Unified settings hub for rimir plugins
+rdt.section: FAQ
+title: $:/plugins/rimir/core-hook/doc/faq
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Q: My plugin doesn't appear in the settings hub. Why?
+
+The hub discovers plugins via the filter `[plugin-type[plugin]prefix[$:/plugins/rimir/]]`. Check that:
+
+* Your plugin is listed in `tiddlywiki.info` under `plugins`
+* The plugin title starts with `$:/plugins/rimir/`
+* You restarted the server after adding the plugin
+
+Note that core-hook itself is excluded from the sidebar list.
+
+!! Q: Can I use the settings hub without the theme plugin?
+
+The hub layout depends on `rr-settings-*` CSS classes defined in the theme plugin. Without theme, the hub will render but without proper styling (no sidebar layout, no accent borders, no spacing).
+
+!! Q: How does the hub decide which plugin is selected by default?
+
+If no selection state exists in `$:/state/rimir/core-hook/selected`, the hub auto-selects the first plugin alphabetically (via `sort[name]first[]`).
+
+</$fill>
+</$transclude>

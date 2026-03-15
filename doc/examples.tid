@@ -1,0 +1,35 @@
+created: 20260315120000000
+modified: 20260315120000000
+rdt.order: 4
+rdt.plugin-key: core-hook
+rdt.plugin-name: core hook
+rdt.plugin-subtitle: Unified settings hub for rimir plugins
+rdt.section: Examples
+title: $:/plugins/rimir/core-hook/doc/examples
+type: text/vnd.tiddlywiki
+
+<$transclude $tiddler="$:/plugins/rimir/doc-template/templates/page">
+<$fill $name="body">
+
+!! Opting a plugin into the settings hub
+
+Create a `settings.tid` inside your plugin with any UI content:
+
+```
+title: $:/plugins/rimir/my-plugin/settings
+type: text/vnd.tiddlywiki
+
+<div class="rr-input-row">
+  <label>API Endpoint:</label>
+  <$edit-text tiddler="$:/config/rimir/my-plugin/endpoint" tag="input" class="rr-input"/>
+</div>
+```
+
+The hub transcludes this tiddler automatically when the user selects your plugin in the sidebar.
+
+!! Plugin without settings
+
+If your plugin has no configurable settings, the hub shows a fallback info card with a link to the plugin's documentation. No action needed — the fallback is automatic.
+
+</$fill>
+</$transclude>
