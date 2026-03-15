@@ -1,0 +1,31 @@
+title: $:/plugins/rimir/core-hook/test/test-hub
+description: Settings hub renders sidebar and content area
+type: text/vnd.tiddlywiki-multiple
+tags: [[$:/tags/wiki-test-spec]]
+
+title: $:/plugins/rimir/testplugin
+plugin-type: plugin
+name: test plugin
+version: 1.0.0
+description: A test plugin
+type: application/json
+
+{"tiddlers":{}}
++
+title: $:/plugins/rimir/testplugin/settings
+type: text/vnd.tiddlywiki
+
+Test settings content
++
+title: Output
+
+\whitespace trim
+<div class="rr-settings-hub"><div class="rr-settings-sidebar"><$list filter="[plugin-type[plugin]prefix[$:/plugins/rimir/]!title[$:/plugins/rimir/core-hook]sort[name]]"><span class="rr-settings-plugin-item"><$text text={{{ [<currentTiddler>get[name]] ~[<currentTiddler>split[/]last[1]] }}}/></span></$list></div><div class="rr-settings-content">present</div></div>
++
+title: ExpectedResult
+
+<p><div class="rr-settings-hub"><div class="rr-settings-sidebar"><span class="rr-settings-plugin-item">test plugin</span></div><div class="rr-settings-content">present</div></div></p>
++
+title: Narrative
+
+Verifies the settings hub renders sidebar with plugin names and content area.

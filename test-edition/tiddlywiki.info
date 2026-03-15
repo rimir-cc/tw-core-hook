@@ -1,0 +1,11 @@
+{
+    "description": "Test edition for core-hook",
+    "plugins": [
+        "tiddlywiki/jasmine",
+        "rimir/core-hook"
+    ],
+    "themes": [
+        "tiddlywiki/vanilla",
+        "tiddlywiki/snowwhite"
+    ]
+}
