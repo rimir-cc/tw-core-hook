@@ -27,7 +27,7 @@ Finds all installed rimir plugins except core-hook itself.
 !! Convention: settings tiddler
 
 |!Pattern |!Purpose |
-|`$:/plugins/rimir/<slug>/settings` |Settings panel content — transclused by the hub and shown in plugin detail view |
+|`$:/plugins/rimir/<slug>/settings` |Settings panel content — transcluded by the hub and shown in plugin detail view |
 
 !! Convention: icon tiddler
 

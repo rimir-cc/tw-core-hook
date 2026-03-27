@@ -15,11 +15,17 @@ type: text/vnd.tiddlywiki
 
 |!File |!Role |
 |`controlpanel.tid` |Main hub UI — tagged `$:/tags/ControlPanel/SettingsTab`, renders sidebar + content layout |
-|`default-panel.tid` |Fallback panel shown when a plugin has no `settings` tiddler |
+|`default-panel.tid` |Fallback panel shown when a plugin has no `settings` tiddler; links to doc/overview or legacy doc-overview |
 |`settings.tid` |core-hook's own settings entry (displays "no configurable settings" info card) |
+|`documentation.tid` |Documentation tab — transcludes doc/overview if doc-template is installed, otherwise fallback |
 |`readme.tid` |Plugin readme |
+|`changelog.tid` |Version history table |
 |`icon.tid` |SVG icon |
 |`plugin.info` |Plugin metadata |
+|`LICENSE.md` + `.meta` |MIT license (sidecar maps to `$:/plugins/rimir/core-hook/license`) |
+|`README.md` |GitHub-facing readme |
+|`test/test-hub.tid` |Regression test — verifies sidebar renders plugin names and content area |
+|`doc/*.tid` |Doc-template documentation tiddlers (overview, architecture, dev-workflow, examples, faq, reference, tw-internals) |
 
 !! Restart rules
 

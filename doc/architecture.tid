@@ -27,7 +27,7 @@ Selected plugin is stored in `$:/state/rimir/core-hook/selected`. If no selectio
 
 !! Settings resolution
 
-For the selected plugin `$:/plugins/rimir/<slug>`, the hub appends `/settings` and checks if that tiddler exists (across shadows + real tiddlers). If found, it transcludes the settings panel. If not, it falls back to `default-panel.tid`.
+For the selected plugin `$:/plugins/rimir/<slug>`, the hub appends `/settings` and checks if that tiddler exists (across shadows + real tiddlers). If found, it transcludes the settings panel. If not, it falls back to `default-panel.tid`, which shows an info card and links to the plugin's documentation — checking both `doc/overview` and legacy `doc-overview` paths.
 
 !! Naming convention
 
