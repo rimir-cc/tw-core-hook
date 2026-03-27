@@ -8,8 +8,8 @@ type: text/vnd.tiddlywiki
 <div class="rr-settings-info-card">
 This plugin has no configurable settings.
 
-<$let docTitle={{{ [<selected>addsuffix[/doc-overview]] }}} >
-<$list filter="[all[shadows+tiddlers]title<docTitle>]" variable="doc">
+<$let docTitle={{{ [<selected>addsuffix[/doc/overview]] }}} docTitleLegacy={{{ [<selected>addsuffix[/doc-overview]] }}} >
+<$list filter="[all[shadows+tiddlers]title<docTitle>] [all[shadows+tiddlers]title<docTitleLegacy>] +[first[]]" variable="doc">
 
 <$link to=<<doc>>>Open documentation &rarr;</$link>
 
