@@ -39,7 +39,7 @@ v<$text text={{{ [<currentTiddler>get[version]] }}}/>
 </div>
 </div>
 <$list filter="[all[shadows+tiddlers]title<settingsTitle>]" variable="panel">
-<$transclude $tiddler=<<panel>>/>
+<$transclude $tiddler=<<panel>> $mode="block"/>
 </$list>
 <$list filter="[all[shadows+tiddlers]title<settingsTitle>] +[count[]match[0]]" variable="ignore">
 <$transclude $tiddler="$:/plugins/rimir/core-hook/default-panel"/>
