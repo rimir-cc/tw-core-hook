@@ -6,6 +6,7 @@ type: text/vnd.tiddlywiki
 ! Changelog
 
 |!Version |!Date |!Changes |
+|v0.1.8 |2026-04-27 |Declare `doc-template` as soft-dependent in plugin.info |
 |v0.1.7 |2026-04-07 |Fix settings panel transclude mode for proper wikitext block rendering |
 |v0.1.6 |2026-03-27 |Fix docs: typo in reference, expand file list in dev-workflow, add dual doc-path detail to architecture |
 |v0.1.5 |2026-03-27 |Fix default panel doc link: support both doc/overview and legacy doc-overview paths |
